@@ -3,20 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>smpalislamiyah</title>
-  <link rel="icon" href="https://lh3.googleusercontent.com/d/1Q8Dmvw3a-CyPPnEFihoKAvq5SqrCioo7" />
-  <!-- Script pengalihan otomatis seketika -->
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbyLoOzYAiFbj2xzKsxJ-JYStARUZ1mcI-I8dvtAChjpPNWQX3KQYKDrtu3u1PA9yquU/exec">
+  <title>Website SMP Al-Islamiyah</title>
   <style>
-    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #eee; margin: 0; }
-    .loader { text-align: center; color: #555; }
-    a { color: #2563eb; text-decoration: none; font-weight: bold; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .iframe-container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    iframe {
+      position: absolute;
+      top: -28px; /* Menggeser iframe ke atas untuk menyembunyikan banner */
+      left: 0;
+      width: 100%;
+      height: calc(100% + 28px); /* Menyesuaikan tinggi agar bagian bawah tidak terpotong */
+      border: none;
+    }
   </style>
 </head>
 <body>
-  <div class="loader">
-    <p>Memuat sistem aplikasi...</p>
-    <p><small>Jika tidak dialihkan secara otomatis, <a href="https://script.google.com/macros/s/AKfycbyLoOzYAiFbj2xzKsxJ-JYStARUZ1mcI-I8dvtAChjpPNWQX3KQYKDrtu3u1PA9yquU/exec">klik di sini</a>.</small></p>
+  <div class="iframe-container">
+    <!-- Pastikan X-Frame-Options sudah di set ALLOWALL di Apps Script -->
+    <iframe src="https://script.google.com/macros/s/AKfycbyLoOzYAiFbj2xzKsxJ-JYStARUZ1mcI-I8dvtAChjpPNWQX3KQYKDrtu3u1PA9yquU/exec"></iframe>
   </div>
 </body>
 </html>
