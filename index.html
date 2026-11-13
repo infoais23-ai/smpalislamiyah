@@ -1,75 +1,36 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>smpalislamiyah</title>
-  <link rel="icon" href="https://lh3.googleusercontent.com/d/1Q8Dmvw3a-CyPPnEFihoKAvq5SqrCioo7" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .card {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #666;
-    }
-
-    .loader {
-      font-style: italic;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Karya Tulis - SMP Al-Islamiyah</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Mencegah scroll ganda */
+        }
+        .iframe-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        /* Trik memotong banner peringatan Google */
+        .iframe-container iframe {
+            position: absolute;
+            top: -36px; /* Geser iframe ke atas sejauh 36px */
+            left: 0;
+            width: 100%;
+            height: calc(100vh + 36px); /* Tambah tinggi agar bagian bawah tidak terpotong */
+            border: none;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="card">
-    <img src="https://lh3.googleusercontent.com/d/1Q8Dmvw3a-CyPPnEFihoKAvq5SqrCioo7" alt="Logo" width="80" style="margin-bottom: 15px;">
-    <h2>SMP Islamiyah</h2>
-    <p id="status-text" class="loader">Menghubungkan ke server...</p>
-    <div id="app-content" style="display: none;">
-      <p id="api-message" style="font-weight: bold; color: #007bff;"></p>
+    <div class="iframe-container">
+        <!-- Link Apps Script Anda sudah saya masukkan di bawah ini -->
+        <iframe src="https://script.google.com/macros/s/AKfycbxujaHe1dAcKElgQtgJhxaR6PnHj8xOioqNCYS4DHVBEW4zEWOCWH2_7SKvQ9c3J0UF/exec"></iframe>
     </div>
-  </div>
-
-  <script>
-    // Ganti URL di bawah ini dengan URL Web App Google Apps Script Anda yang terbaru
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNWNq2vUHs89eRV_R-K4ieUD47-3lowPLeCRR6cspdjW_ABr6HC-z8cIxTdk54SaLX/exec";
-
-    fetch(SCRIPT_URL)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('status-text').style.display = 'none';
-        document.getElementById('app-content').style.display = 'block';
-        document.getElementById('api-message').innerText = data.message;
-      })
-      .catch(error => {
-        console.error('Terjadi kesalahan:', error);
-        document.getElementById('status-text').innerText = "Gagal memuat data dari server.";
-        document.getElementById('status-text').style.color = "red";
-      });
-  </script>
-
 </body>
 </html>
